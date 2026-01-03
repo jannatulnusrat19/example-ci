@@ -7,5 +7,7 @@ def subtract(a, b):
 def multiply(a, b):
     return a * b
 
-def convert_fahrenheit_to_celsius(fahrenheit):
-    return multiply(subtract(fahrenheit, 32), 9 / 5) # <-- Fix this in step 7
+def convert_fahrenheit_to_celsius(fahrenheit): 
+    if fahrenheit < -459.67:  # absolute zero check
+        raise AssertionError("Temperature below absolute zero!")
+    return multiply(subtract(fahrenheit, 32), 5 / 9)
